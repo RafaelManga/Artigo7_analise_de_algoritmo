@@ -1,0 +1,30 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "1) Compilar",
+      "type": "shell",
+      "command": "gcc -std=c11 -O2 -Wall -Wextra -pedantic atividade_algoritmos.c -o atividade_algoritmos",
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "2) Executar (gera resultados.csv e evidencias.txt)",
+      "type": "shell",
+      "command": "./atividade_algoritmos",
+      "windows": { "command": ".\\atividade_algoritmos.exe" },
+      "options": { "cwd": "${workspaceFolder}" },
+      "dependsOn": "1) Compilar",
+      "problemMatcher": []
+    },
+    {
+      "label": "3) Gerar graficos e tabelas",
+      "type": "shell",
+      "command": "python3 gerar_graficos_tabelas.py resultados.csv",
+      "windows": { "command": "python gerar_graficos_tabelas.py resultados.csv" },
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    }
+  ]
+}

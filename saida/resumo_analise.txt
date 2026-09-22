@@ -1,0 +1,52 @@
+RESUMO NUMERICO PARA A DISCUSSAO
+============================================================
+
+[Geracao]  ns por elemento (deve ser ~constante se o tempo e linear)
+  N= 100000: media=   2.380 ms  ->   23.8 ns/elemento
+  N= 200000: media=   3.647 ms  ->   18.2 ns/elemento
+  N= 300000: media=   5.617 ms  ->   18.7 ns/elemento
+  N= 500000: media=   9.338 ms  ->   18.7 ns/elemento
+  ajuste t = a*N: a = 1.895e-08 s/elemento (usando [100000, 200000, 300000])
+  estimativa 500.000: 9.473 ms | medido: 9.338 ms | erro +1.4%
+
+[Ordenacao]  razoes entre tamanhos: observado x esperado
+  100000 -> 200000: observado x1.70 | linear x2.00 | n log n x2.12
+  100000 -> 300000: observado x2.75 | linear x3.00 | n log n x3.29
+  100000 -> 500000: observado x4.58 | linear x5.00 | n log n x5.70
+  ajuste t = b*N*log2(N): b = 7.707e-09 s
+  estimativa 500.000: 72.953 ms | medido: 69.985 ms | erro +4.2%
+  dispersao: N=100000: max/min das 4 execucoes = 1.48 | N=200000: max/min das 4 execucoes = 1.10 | N=300000: max/min das 4 execucoes = 1.15 | N=500000: max/min das 4 execucoes = 1.12   (valor >> 1 indica ruido/aquecimento)
+
+[Busca sequencial]  ns por comparacao (chaves existentes e ausentes)
+  N=100000: 25%=0.67  Centro=0.71  75%=0.69  Final=0.66  Ausente_menor=0.67  Ausente_meio=0.66  Ausente_maior=0.69
+  N=200000: 25%=0.65  Centro=0.64  75%=0.62  Final=0.68  Ausente_menor=0.66  Ausente_meio=0.65  Ausente_maior=0.63
+  N=300000: 25%=0.62  Centro=0.61  75%=0.62  Final=0.61  Ausente_menor=0.60  Ausente_meio=0.60  Ausente_maior=0.61
+  (se ns/comparacao for ~igual entre as chaves, o tempo e proporcional ao no de comparacoes)
+
+[Crescimento do tempo da sequencial: chave Final]
+  100000 -> 200000: observado x2.07 | esperado x2.00
+  100000 -> 300000: observado x2.79 | esperado x3.00
+
+[Busca binaria]  comparacoes maximas e tempo
+  N=100000: max comparacoes observado=17 | ceil(log2 N)=17
+  N=200000: max comparacoes observado=18 | ceil(log2 N)=18
+  N=300000: max comparacoes observado=19 | ceil(log2 N)=19
+  N=500000: max comparacoes observado=19 | ceil(log2 N)=19
+
+[Dispersao das rodadas de tempo (max/min) — quanto maior, mais ruidosa a medida]
+  N=100000: Inicio seq x1.33, Centro seq x1.35, Centro bin x1.57, 75% seq x1.57, 75% bin x1.64, Final seq x1.44, Ausente_meio seq x1.46, Ausente_meio bin x1.42
+  N=200000: Inicio seq x1.33, 25% bin x1.30, Final seq x1.35, Ausente_menor bin x1.33
+  N=300000: Inicio seq x1.33, Centro seq x1.38, Centro bin x1.33, Final bin x1.31
+
+[Ponto de equilibrio: consultas necessarias para compensar a ordenacao]
+  N=100000: ordenar=0.015277 s | economia media=33.97 us/consulta -> 450 consultas | (so chave central: 432)
+  N=200000: ordenar=0.025998 s | economia media=65.24 us/consulta -> 399 consultas | (so chave central: 409)
+  N=300000: ordenar=0.042054 s | economia media=92.42 us/consulta -> 456 consultas | (so chave central: 458)
+
+[Valores repetidos nos vetores ordenados (de evidencias.txt)]
+  N=100000: 1 pares adjacentes iguais
+  N=200000: 7 pares adjacentes iguais
+  N=300000: 18 pares adjacentes iguais
+  N=500000: 58 pares adjacentes iguais
+  Chaves repetidas entre as 5 testadas: 0 (0 => nenhuma chave testada tem duplicata)
+  RESULTADO GERAL: TODAS AS VALIDACOES OK

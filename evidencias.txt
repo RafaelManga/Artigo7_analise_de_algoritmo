@@ -1,0 +1,84 @@
+EVIDENCIAS DA ORDENACAO E DA VALIDACAO DAS BUSCAS
+semente=306 (srand chamado antes de gerar cada vetor)
+
+=== n = 100000 ===
+  Vetor gerado (antes de ordenar):
+    primeiros 5: 323069016 830999404 201263381 2011244759 1709288181 
+    ultimos 5:   159474219 532853182 1374969042 298941376 1240750195 
+  posicoes com v[i-1] > v[i] antes de ordenar: 50049
+  Vetor apos qsort():
+    primeiros 5: 32200 43048 51451 53328 103168 
+    ultimos 5:   2147383431 2147413429 2147435595 2147436823 2147447512 
+  posicoes com v[i-1] > v[i] apos ordenar: 0  -> ordenado = SIM
+  pares adjacentes com valores repetidos: 1
+  Validacao das buscas:
+    Inicio        chave=32200       idx_seq=0       idx_bin=0       comp_seq=1       comp_bin=16  VALIDA (chave unica no vetor)
+    25%           chave=532594372   idx_seq=25000   idx_bin=25000   comp_seq=25001   comp_bin=16  VALIDA (chave unica no vetor)
+    Centro        chave=1069883401  idx_seq=50000   idx_bin=50000   comp_seq=50001   comp_bin=16  VALIDA (chave unica no vetor)
+    75%           chave=1609386728  idx_seq=75000   idx_bin=75000   comp_seq=75001   comp_bin=16  VALIDA (chave unica no vetor)
+    Final         chave=2147447512  idx_seq=99999   idx_bin=99999   comp_seq=100000  comp_bin=17  VALIDA (chave unica no vetor)
+    Ausente_menor chave=-2147483648 idx_seq=-1      idx_bin=-1      comp_seq=100000  comp_bin=16  VALIDA (chave ausente: ambos devem retornar -1)
+    Ausente_meio  chave=1069883402  idx_seq=-1      idx_bin=-1      comp_seq=100000  comp_bin=17  VALIDA (chave ausente: ambos devem retornar -1)
+    Ausente_maior chave=2147483647  idx_seq=-1      idx_bin=-1      comp_seq=100000  comp_bin=17  VALIDA (chave ausente: ambos devem retornar -1)
+
+=== n = 200000 ===
+  Vetor gerado (antes de ordenar):
+    primeiros 5: 323069016 830999404 201263381 2011244759 1709288181 
+    ultimos 5:   576183455 318513169 1714921471 1077778490 892207423 
+  posicoes com v[i-1] > v[i] antes de ordenar: 99938
+  Vetor apos qsort():
+    primeiros 5: 6234 32200 43048 51451 52991 
+    ultimos 5:   2147444583 2147447512 2147451120 2147466770 2147476823 
+  posicoes com v[i-1] > v[i] apos ordenar: 0  -> ordenado = SIM
+  pares adjacentes com valores repetidos: 7
+  Validacao das buscas:
+    Inicio        chave=6234        idx_seq=0       idx_bin=0       comp_seq=1       comp_bin=17  VALIDA (chave unica no vetor)
+    25%           chave=534901521   idx_seq=50000   idx_bin=50000   comp_seq=50001   comp_bin=17  VALIDA (chave unica no vetor)
+    Centro        chave=1072878218  idx_seq=100000  idx_bin=100000  comp_seq=100001  comp_bin=17  VALIDA (chave unica no vetor)
+    75%           chave=1610883184  idx_seq=150000  idx_bin=150000  comp_seq=150001  comp_bin=17  VALIDA (chave unica no vetor)
+    Final         chave=2147476823  idx_seq=199999  idx_bin=199999  comp_seq=200000  comp_bin=18  VALIDA (chave unica no vetor)
+    Ausente_menor chave=-2147483648 idx_seq=-1      idx_bin=-1      comp_seq=200000  comp_bin=17  VALIDA (chave ausente: ambos devem retornar -1)
+    Ausente_meio  chave=1072878219  idx_seq=-1      idx_bin=-1      comp_seq=200000  comp_bin=18  VALIDA (chave ausente: ambos devem retornar -1)
+    Ausente_maior chave=2147483647  idx_seq=-1      idx_bin=-1      comp_seq=200000  comp_bin=18  VALIDA (chave ausente: ambos devem retornar -1)
+
+=== n = 300000 ===
+  Vetor gerado (antes de ordenar):
+    primeiros 5: 323069016 830999404 201263381 2011244759 1709288181 
+    ultimos 5:   1108440006 2029480809 1822969615 1525265948 2121826877 
+  posicoes com v[i-1] > v[i] antes de ordenar: 149859
+  Vetor apos qsort():
+    primeiros 5: 6234 32200 43048 51451 52991 
+    ultimos 5:   2147447512 2147451120 2147458354 2147466770 2147476823 
+  posicoes com v[i-1] > v[i] apos ordenar: 0  -> ordenado = SIM
+  pares adjacentes com valores repetidos: 18
+  Validacao das buscas:
+    Inicio        chave=6234        idx_seq=0       idx_bin=0       comp_seq=1       comp_bin=18  VALIDA (chave unica no vetor)
+    25%           chave=534543972   idx_seq=75000   idx_bin=75000   comp_seq=75001   comp_bin=18  VALIDA (chave unica no vetor)
+    Centro        chave=1072080939  idx_seq=150000  idx_bin=150000  comp_seq=150001  comp_bin=18  VALIDA (chave unica no vetor)
+    75%           chave=1609810760  idx_seq=225000  idx_bin=225000  comp_seq=225001  comp_bin=18  VALIDA (chave unica no vetor)
+    Final         chave=2147476823  idx_seq=299999  idx_bin=299999  comp_seq=300000  comp_bin=19  VALIDA (chave unica no vetor)
+    Ausente_menor chave=-2147483648 idx_seq=-1      idx_bin=-1      comp_seq=300000  comp_bin=18  VALIDA (chave ausente: ambos devem retornar -1)
+    Ausente_meio  chave=1072080940  idx_seq=-1      idx_bin=-1      comp_seq=300000  comp_bin=18  VALIDA (chave ausente: ambos devem retornar -1)
+    Ausente_maior chave=2147483647  idx_seq=-1      idx_bin=-1      comp_seq=300000  comp_bin=19  VALIDA (chave ausente: ambos devem retornar -1)
+
+=== n = 500000 ===
+  Vetor gerado (antes de ordenar):
+    primeiros 5: 323069016 830999404 201263381 2011244759 1709288181 
+    ultimos 5:   1319125633 1579780503 1503366421 1084865341 1870143959 
+  posicoes com v[i-1] > v[i] antes de ordenar: 249827
+  Vetor apos qsort():
+    primeiros 5: 890 6234 31895 32200 39698 
+    ultimos 5:   2147461995 2147466770 2147476823 2147478494 2147480926 
+  posicoes com v[i-1] > v[i] apos ordenar: 0  -> ordenado = SIM
+  pares adjacentes com valores repetidos: 58
+  Validacao das buscas:
+    Inicio        chave=890         idx_seq=0       idx_bin=0       comp_seq=1       comp_bin=18  VALIDA (chave unica no vetor)
+    25%           chave=535481137   idx_seq=125000  idx_bin=125000  comp_seq=125001  comp_bin=18  VALIDA (chave unica no vetor)
+    Centro        chave=1073290485  idx_seq=250000  idx_bin=250000  comp_seq=250001  comp_bin=18  VALIDA (chave unica no vetor)
+    75%           chave=1609606910  idx_seq=375000  idx_bin=375000  comp_seq=375001  comp_bin=18  VALIDA (chave unica no vetor)
+    Final         chave=2147480926  idx_seq=499999  idx_bin=499999  comp_seq=500000  comp_bin=19  VALIDA (chave unica no vetor)
+    Ausente_menor chave=-2147483648 idx_seq=-1      idx_bin=-1      comp_seq=500000  comp_bin=18  VALIDA (chave ausente: ambos devem retornar -1)
+    Ausente_meio  chave=1073290486  idx_seq=-1      idx_bin=-1      comp_seq=500000  comp_bin=19  VALIDA (chave ausente: ambos devem retornar -1)
+    Ausente_maior chave=2147483647  idx_seq=-1      idx_bin=-1      comp_seq=500000  comp_bin=19  VALIDA (chave ausente: ambos devem retornar -1)
+
+RESULTADO GERAL: TODAS AS VALIDACOES OK

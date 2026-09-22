@@ -1,0 +1,4 @@
+N	Tempo de ordenacao (s)	Economia media por consulta (us) [5 chaves]	Consultas p/ compensar [5 chaves]	Economia chave central (us)	Consultas p/ compensar [centro]
+100000	0.015277	33.97	450	35.44	432
+200000	0.025998	65.24	399	63.69	409
+300000	0.042054	92.42	456	91.84	458

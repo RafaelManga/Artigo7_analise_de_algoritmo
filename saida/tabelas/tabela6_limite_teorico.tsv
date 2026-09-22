@@ -1,0 +1,5 @@
+N	ceil(log2 N)	Comparacoes maximas observadas
+100000	17	17
+200000	18	18
+300000	19	19
+500000	19	19

@@ -1,0 +1,25 @@
+VALIDAÇÃO DA ENTREGA
+
+1. O código compila sem erros e sem avisos com:
+   gcc -std=c11 -O2 -Wall -Wextra -pedantic atividade_algoritmos.c -o atividade_algoritmos
+
+2. O programa grava resultados.csv (cabeçalho + 19 colunas) e evidencias.txt.
+
+3. resultados.csv contém, para cada um dos 4 tamanhos (100.000, 200.000, 300.000 e 500.000):
+   1 linha GERACAO, 1 linha ORDENACAO e 8 linhas BUSCA (5 chaves existentes + 3 ausentes),
+   totalizando 4 GERACAO, 4 ORDENACAO e 32 BUSCA. O tamanho de 500.000 serve apenas para
+   comparar as estimativas com a medição; as análises principais usam 100.000, 200.000 e 300.000.
+
+4. Evidência da ordenação: em evidencias.txt, para cada vetor, constam os 5 primeiros e os 5 últimos
+   elementos antes e depois de qsort(), o número de posições com v[i-1] > v[i] (maior que zero antes
+   e igual a zero depois) e a conclusão "ordenado = SIM". Nas linhas ORDENACAO o campo ordenado = 1.
+
+5. Validação das buscas: para as chaves existentes, verifica-se v[índice] == chave nas duas funções e
+   que a sequencial retorna a primeira ocorrência; para as três chaves ausentes, ambas retornam -1.
+   O resultado aparece em evidencias.txt (VALIDA/FALHA) e na linha final "RESULTADO GERAL".
+
+6. Valores repetidos: evidencias.txt informa quantos pares adjacentes de valores iguais existem em cada
+   vetor ordenado e se cada chave testada é repetida.
+
+7. Chaves, índices e contagens de comparações são determinísticos (semente 306). Os tempos podem variar
+   entre execuções e entre computadores; por isso cada tempo de busca é a mediana de 15 rodadas.
